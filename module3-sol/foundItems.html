@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+<ol>
+  <div class="container-fluid">
+    <li>
+      <div class="row" id="headers">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">item name</div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">item short name</div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">item description</div>
+      </div>
+    </li>
+    <li ng-repeat="item in ctrl.foundItems">
+      <div class="row">
+        <div class="col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ item.name }}</div>
+        <div class="col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ item.short_name }}</div>
+        <div class="col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{{item.description}}</div>
+        <button ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
+      </div>
+    </li>
+
+</div>
+</ol>
+<div class="error" ng-if="(ctrl.found.length == 0);">Nothing Found</div>
